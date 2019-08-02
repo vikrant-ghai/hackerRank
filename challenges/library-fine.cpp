@@ -6,20 +6,17 @@ vector<string> split_string(string);
 
 // Complete the libraryFine function below.
 int libraryFine(int d1, int m1, int y1, int d2, int m2, int y2) {
-int f=0;//(y1-y2)?(f=10000):((m1-m2)?(f=(m1-m2)*500):((d1-d2)?(f=(d1-d2)*15):0));
-
-
-((y1-y2)>0)?f+=10000:0;
-
-if (y1==y2) {
-    if(m1>m2) {
-        f+=(m1-m2)*500;
-    }  
-    if((d1>d2)&&(m1==m2)) {
-        f+=(d1-d2)*15;
+    int f=0;
+    ((y1-y2)>0)?f+=10000:0;
+    if (y1==y2) {
+        if(m1>m2) {
+            f+=(m1-m2)*500;
+        }  
+        if((d1>d2)&&(m1==m2)) {
+            f+=(d1-d2)*15;
+        }
     }
-}
-return f;
+    return f;
 }
 
 int main()
